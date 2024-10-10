@@ -1,6 +1,5 @@
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { MapPinIcon, PhoneIcon, MailIcon, ClockIcon, CameraIcon, InstagramIcon, FacebookIcon, TwitterIcon, Linkedin } from 'lucide-react'
 import ContactForm from "@/components/app/contact/ContactForm";
 import ContactInformation from "@/components/app/contact/ContactInformation";
 import FollowUs from "@/components/app/contact/FollowUs";
