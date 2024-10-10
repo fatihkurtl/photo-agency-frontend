@@ -31,7 +31,7 @@ export interface IWhyChooseUs {
   description: string;
 }
 
-export interface IFrequentlyAskedQuestions {
+export interface IFaq {
   question: string;
   answer: string;
 }

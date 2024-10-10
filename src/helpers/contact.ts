@@ -3,6 +3,7 @@ import type {
   IContact,
   IContactApiResponse,
   IContactInformation,
+  IFaq,
   ISocialMediaAccounts,
   IWhyChooseUs,
 } from "@/interfaces/contact";
@@ -37,7 +38,7 @@ export class ContactHelper {
     });
   }
 
-  async getFaq(): Promise<IWhyChooseUs[]> {
+  async getFaqs(): Promise<IFaq[]> {
     return this.api.get("/contact/faq", {
       "Content-Type": "application/json",
     });

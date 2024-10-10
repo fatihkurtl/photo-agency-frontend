@@ -65,7 +65,7 @@ export default function ContactForm() {
             console.log(response);
             if (response.status === "success") {
                 toast({
-                    title: "Mesajınız kaydedildi.",
+                    title: "Mesajınız kayıt edildi.",
                     description: response.message,
                     duration: 5000,
                 });
@@ -81,6 +81,13 @@ export default function ContactForm() {
                 });
                 setErrors({});
                 setError(null);
+            } else {
+                toast({
+                    title: "Mesajınız kayıt edilemedi.",
+                    description: response.message,
+                    duration: 5000,
+                });
+                setError(response.message);
             }
         } catch (error) {
             console.log(error);

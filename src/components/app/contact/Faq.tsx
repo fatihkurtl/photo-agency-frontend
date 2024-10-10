@@ -1,34 +1,63 @@
 "use client";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState, useEffect } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import type { IFaq } from "@/interfaces/contact";
+import api from "@/services/api";
+import { ContactHelper } from "@/helpers/contact";
+
+const contactHelper = new ContactHelper(api);
+
 export default function Faq() {
+    const [error, setError] = useState<string | null>(null);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [faqs, setFaqs] = useState<IFaq[]>([]);
+
+    useEffect(() => {
+        const getFaqs = async () => {
+            setLoading(true);
+            try {
+                const response: IFaq[] = await contactHelper.getFaqs();
+                if (response && response.length > 0) {
+                    setFaqs(response);
+                    setLoading(false);
+                    console.log(faqs);
+                    console.log(response);
+                }
+            } catch (error) {
+                console.log(error);
+                setError("Bir hata oluştu.");
+            } finally {
+                setLoading(false);
+            }
+        };
+        getFaqs();
+    }, []);
+
     return (
         <section className="mt-16">
             <h3 className="text-2xl font-semibold mb-4">Sıkça Sorulan Sorular</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Card>
-                    <CardContent className="p-6">
-                        <h4 className="font-semibold mb-2">Ne tür fotoğrafçılık hizmeti sunuyorsunuz?</h4>
-                        <p className="text-gray-600">Portreler, etkinlikler, düğünler ve ticari fotoğrafçılık dahil olmak üzere çok çeşitli fotoğrafçılık hizmetleri sunuyoruz.</p>
-                    </CardContent>
-                </Card>
-                <Card>
-                    <CardContent className="p-6">
-                        <h4 className="font-semibold mb-2">Ne kadar önceden rezervasyon yaptırmalıyım?</h4>
-                        <p className="text-gray-600">Özellikle düğünler ve büyük etkinlikler için en az 4-6 hafta öncesinden rezervasyon yaptırmanızı öneririz.</p>
-                    </CardContent>
-                </Card>
-                <Card>
-                    <CardContent className="p-6">
-                        <h4 className="font-semibold mb-2">Fotoğraf düzenleme hizmeti sunuyor musunuz?</h4>
-                        <p className="text-gray-600">Evet, tüm paketlerimize temel düzenleme dahildir. Gelişmiş rötuş ek bir hizmet olarak mevcuttur.</p>
-                    </CardContent>
-                </Card>
-                <Card>
-                    <CardContent className="p-6">
-                        <h4 className="font-semibold mb-2">İptal politikanız nedir?</h4>
-                        <p className="text-gray-600">Planlanan seanstan 14 gün veya daha uzun süre önce yapılan iptaller için tam geri ödeme sunuyoruz. Daha fazla ayrıntı için lütfen bizimle iletişime geçin.</p>
-                    </CardContent>
-                </Card>
+                {loading ? (
+                    <div>Yükleniyor...</div>
+                ) : (
+                    <>
+                        {error === null ? (
+                            faqs.map((faq, index) => (
+                                <Card key={index}>
+                                    <CardContent className="p-6">
+                                        <h4 className="font-semibold mb-2">{faq.question}</h4>
+                                        <p className="text-gray-600">{faq.answer}</p>
+                                    </CardContent>
+                                </Card>
+                            ))
+                        ) : (
+                            <CardContent className="p-6">
+                                <h4 className="font-semibold mb-2">Bir hata oluştu!</h4>
+                                <p className="text-red-600">{error}</p>
+                            </CardContent>
+                        )}
+                    </>
+                )}
             </div>
         </section>
     )
