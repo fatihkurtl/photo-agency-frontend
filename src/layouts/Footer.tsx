@@ -9,7 +9,7 @@ export default function Footer() {
                     <div>
                         <div className="flex items-center space-x-2 mb-4">
                             <CameraIcon className="h-8 w-8 text-blue-400" />
-                            <h3 className="text-xl font-semibold">John Doe Photography</h3>
+                            <h3 className="text-xl font-semibold">John Doe Fotoğrafçılık</h3>
                         </div>
                         <p className="text-gray-400">Profesyonel fotoğrafçılık hizmetleriyle markanızı yükseltin.</p>
                     </div>

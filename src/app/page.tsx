@@ -33,15 +33,23 @@ export default function Home() {
       {/* Hero Section */}
       <section className="bg-gray-900 text-white py-20">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-10 md:mb-0">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Profesyonel Fotoğrafçılık Hizmetleri</h2>
-              <p className="text-xl mb-6">Kurumsal kimliğinizi güçlendirecek, ürünlerinizi ön plana çıkaracak ve etkinliklerinizi ölümsüzleştirecek yüksek kaliteli fotoğrafçılık çözümleri sunuyoruz.</p>
-              <Button size="lg" className="mr-4 text-gray-900" variant="secondary">Hizmetlerimiz</Button>
-              <Button size="lg" className="text-gray-900" variant="secondary">İletişime Geçin</Button>
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Profesyonel Fotoğrafçılık Hizmetleri</h2>
+              <p className="text-xl mb-8">Kurumsal kimliğinizi güçlendirecek, ürünlerinizi ön plana çıkaracak ve etkinliklerinizi ölümsüzleştirecek yüksek kaliteli fotoğrafçılık çözümleri sunuyoruz.</p>
+              <div className="flex flex-wrap gap-4">
+                <Button size="lg" className="text-gray-900" variant="secondary">Hizmetlerimiz</Button>
+                <Button size="lg" className="text-gray-900" variant="secondary">İletişime Geçin</Button>
+              </div>
             </div>
-            <div className="md:w-1/2">
-              <Image src={PlaceHolder} width={300} height={300} alt="Professional Photography Services" className="rounded-lg shadow-lg" />
+            <div className="md:w-1/2 flex justify-center">
+              <Image
+                src={PlaceHolder}
+                width={400}
+                height={400}
+                alt="Professional Photography Services"
+                className="rounded-lg shadow-lg object-cover"
+              />
             </div>
           </div>
         </div>
