@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card"
-import { CameraIcon, UserIcon, ShoppingBagIcon } from 'lucide-react'
+import { CameraIcon, UserIcon, ShoppingBagIcon, Crown } from 'lucide-react'
+import { IWhyChooseOurServices } from "@/interfaces/services";
 import api from "@/services/api";
 import { ServicesHelper } from "@/helpers/services";
 
@@ -10,29 +11,50 @@ const servicesHelper = new ServicesHelper(api);
 
 
 export default function WhyChooseOurServices() {
+
+    const [loading, setLoading] = useState<boolean>(false);
+    const [error, setError] = useState<string | null>(null);
+    const [whyChooseOurServices, setWhyChooseOurServices] = useState<IWhyChooseOurServices[]>([]);
+
+    useEffect(() => {
+        const getWhyChooseOurServices = async () => {
+            setLoading(true);
+            try {
+                const response: IWhyChooseOurServices[] = await servicesHelper.getWhyChooseOurServices();
+                setWhyChooseOurServices(response);
+                setError(null);
+            } catch (error) {
+                console.log(error);
+                setError("Hata");
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        getWhyChooseOurServices();
+    }, []);
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card>
-                <CardContent className="flex flex-col items-center text-center p-6">
-                    <CameraIcon className="h-12 w-12 text-blue-500 mb-4" />
-                    <h4 className="text-xl font-semibold mb-2">Professional Equipment</h4>
-                    <p className="text-gray-600">We use top-of-the-line cameras and lenses to ensure the highest quality images.</p>
-                </CardContent>
-            </Card>
-            <Card>
-                <CardContent className="flex flex-col items-center text-center p-6">
-                    <UserIcon className="h-12 w-12 text-blue-500 mb-4" />
-                    <h4 className="text-xl font-semibold mb-2">Experienced Photographer</h4>
-                    <p className="text-gray-600">With years of experience, we know how to capture the perfect shot in any situation.</p>
-                </CardContent>
-            </Card>
-            <Card>
-                <CardContent className="flex flex-col items-center text-center p-6">
-                    <ShoppingBagIcon className="h-12 w-12 text-blue-500 mb-4" />
-                    <h4 className="text-xl font-semibold mb-2">Satisfaction Guaranteed</h4>
-                    <p className="text-gray-600">We're not happy until you're thrilled with your photos.</p>
-                </CardContent>
-            </Card>
+            {loading ? (
+                <div>Yükleniyor...</div>
+            ) : (
+                <>
+                    {error === null ? (
+                        whyChooseOurServices.map((service, index) => (
+                            <Card key={index}>
+                                <CardContent className="flex flex-col items-center text-center p-6">
+                                    <Crown className="h-12 w-12 text-yellow-500 mb-4" />
+                                    <h4 className="text-xl font-semibold mb-2">{service.title}</h4>
+                                    <p className="text-gray-600">{service.description}</p>
+                                </CardContent>
+                            </Card>
+                        ))
+                    ) : (
+                        <p className="text-red-500">{error}</p>
+                    )}
+                </>
+            )}
         </div>
     )
 }

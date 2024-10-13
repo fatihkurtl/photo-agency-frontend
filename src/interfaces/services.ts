@@ -1,3 +1,8 @@
+export interface IContent {
+  name: string;
+  description: string;
+}
+
 export interface ICategory {
   name: string;
   slug: string;
@@ -17,4 +22,9 @@ export interface IService {
   description: string;
   category: number;
   packages: IPackage[];
+}
+
+export interface IWhyChooseOurServices {
+  title: string;
+  description: string;
 }

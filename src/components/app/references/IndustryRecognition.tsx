@@ -40,7 +40,7 @@ export default function IndustryRecognition() {
                 <>
                     {error === null ? (
                         sectoralRecognition.map((recognition, index) => (
-                            <Card>
+                            <Card key={index}>
                                 <CardContent className="p-6 text-center">
                                     <StarIcon className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
                                     <h4 className="font-semibold text-lg mb-2">{recognition.title}</h4>

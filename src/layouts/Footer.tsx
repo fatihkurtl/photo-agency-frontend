@@ -49,6 +49,9 @@ export default function Footer() {
                 </div>
                 <div className="mt-8 border-t border-gray-800 pt-8 text-center">
                     <p className="text-gray-400">&copy; 2024 John Doe Photography. Tüm hakları saklıdır.</p>
+                    <p className="text-gray-500 text-sm mt-2">
+                        Bu web sitesi <a href="https://fatihkurt.web.tr" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">fatihkurt.web.tr</a> tarafından geliştirilmiştir.
+                    </p>
                 </div>
             </div>
         </footer>
