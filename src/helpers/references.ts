@@ -1,5 +1,10 @@
 import { ApiServices } from "@/services/api";
-import type { IClientTestimonials, ICustomerPortfolio, IFeaturedProjects, ISectoralRecognition } from "@/interfaces/references";
+import type {
+  IClientTestimonials,
+  ICustomerPortfolio,
+  IFeaturedProjects,
+  ISectoralRecognition,
+} from "@/interfaces/references";
 
 export class ReferencesHelper {
   private api: ApiServices;
