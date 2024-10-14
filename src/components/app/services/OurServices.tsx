@@ -92,7 +92,7 @@ export default function OurServices() {
                                     <Card key={index} className="flex flex-col">
                                         <CardHeader>
                                             <CardTitle>{pkg.name}</CardTitle>
-                                            <CardDescription className="text-2xl font-bold">{pkg.price}</CardDescription>
+                                            <CardDescription className="text-2xl font-bold">₺{pkg.price}</CardDescription>
                                         </CardHeader>
                                         <CardContent className="flex-grow">
                                             <ul className="list-disc list-inside space-y-2">

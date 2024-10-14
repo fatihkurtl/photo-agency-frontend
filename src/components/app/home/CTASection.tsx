@@ -50,10 +50,9 @@ export default function CTASection() {
                             </div>
                         ))
                     ) : (
-                        <p>{error}</p>
+                        <p className="text-red-500">{error}</p>
                     )}
                 </>
-
             )}
         </section>
     )

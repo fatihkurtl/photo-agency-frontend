@@ -47,7 +47,7 @@ export default function TestimonialsSection() {
                     <>
                         {error === null ? (
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                {clientTestimonials.map((testimonial, index) => (
+                                {clientTestimonials.slice(0, 3).map((testimonial, index) => (
                                     <Card key={index}>
                                         <CardContent className="p-6">
                                             <p className="text-gray-600 mb-4">"{testimonial.quote}"</p>

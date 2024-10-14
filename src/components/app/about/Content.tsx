@@ -32,7 +32,7 @@ export default function Content() {
 
 
     return (
-        <div className="prose max-w-none">
+        <section className="prose max-w-none">
             {loading ? (
                 <div>Yükleniyor...</div>
             ) : (
@@ -48,6 +48,6 @@ export default function Content() {
                     )}
                 </>
             )}
-        </div>
+        </section>
     )
 }

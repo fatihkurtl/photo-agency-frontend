@@ -22,11 +22,11 @@ export default function Contact() {
                         </CardContent>
                     </Card>
                 </div>
-                <div className="space-y-8">
+                <section className="space-y-8">
                     <ContactInformation />
                     <FollowUs />
                     <WhyChooseUs />
-                </div>
+                </section>
             </div>
             <Faq />
         </main>

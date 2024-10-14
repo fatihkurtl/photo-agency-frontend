@@ -25,7 +25,6 @@ export default function Portfolio() {
             try {
                 const response: ICategory[] = await portfolioHelper.getCategories();
                 setCategories([{ name: "Tümü", slug: "tümü" }, ...response]);
-                console.log(response);
                 setLoading(false);
             } catch (error) {
                 console.log(error);
@@ -47,7 +46,6 @@ export default function Portfolio() {
             try {
                 const response: IProjects[] = await portfolioHelper.getProjects();
                 setProjects(response);
-                console.log(response);
                 setLoading(false);
             } catch (error) {
                 console.log(error);

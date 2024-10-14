@@ -32,7 +32,7 @@ export default function Content() {
     }, []);
 
     return (
-        <div className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        <section className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
             {loading ? (
                 <div>Yükleniyor...</div>
             ) : (
@@ -48,6 +48,6 @@ export default function Content() {
                     )}
                 </>
             )}
-        </div>
+        </section>
     )
 }

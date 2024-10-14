@@ -1,8 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { InstagramIcon, FacebookIcon, TwitterIcon, Linkedin } from "lucide-react";
+import { FacebookIcon, InstagramIcon, Linkedin, TwitterIcon } from "lucide-react";
 import type { ISocialMediaAccounts } from "@/interfaces/contact";
 import api from "@/services/api";
 import { ContactHelper } from "@/helpers/contact";
@@ -10,6 +9,7 @@ import { ContactHelper } from "@/helpers/contact";
 const contactHelper = new ContactHelper(api);
 
 export default function FollowUs() {
+
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
     const [socialMediaAccounts, setSocialMediaAccounts] = useState<ISocialMediaAccounts[]>([]);
@@ -36,7 +36,7 @@ export default function FollowUs() {
         getSocialMediaAccounts();
     }, []);
 
-    const icons: Record<string, JSX.Element> = {
+    const socialMediaIcons: Record<string, JSX.Element> = {
         Instagram: <InstagramIcon className="h-6 w-6" />,
         Facebook: <FacebookIcon className="h-6 w-6" />,
         X: <TwitterIcon className="h-6 w-6" />,
@@ -44,30 +44,22 @@ export default function FollowUs() {
     };
 
     return (
-        <Card>
-            <CardHeader>
-                <CardTitle>Bizi Takip Edin</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <div className="flex space-x-4">
-                    {loading ? (
-                        <div>Yükleniyor...</div>
+        <>
+            {loading ? (
+                <div className="text-gray-400">Yükleniyor...</div>
+            ) : (
+                <>
+                    {error === null ? (
+                        socialMediaAccounts.map(({ name, url }) => (
+                            <Link href={url} key={name} target="_blank" className="text-gray-400 hover:text-white">
+                                {socialMediaIcons[name] || null}
+                            </Link>
+                        ))
                     ) : (
-                        <>
-                            {error === null ? (
-                                socialMediaAccounts.map(({ name, url }) => (
-                                    <Link href={url} key={name} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">
-                                        {icons[name] || null}
-                                        <span className="sr-only">{name}</span>
-                                    </Link>
-                                ))
-                            ) : (
-                                <p>{error}</p>
-                            )}
-                        </>
+                        <p className="text-gray-400">{error}</p>
                     )}
-                </div>
-            </CardContent>
-        </Card>
-    );
+                </>
+            )}
+        </>
+    )
 }

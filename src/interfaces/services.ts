@@ -11,7 +11,7 @@ export interface ICategory {
 export interface IPackage {
   features: string[];
   name: string;
-  price: string;
+  price: string | number;
   service: number;
 }
 

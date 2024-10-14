@@ -20,8 +20,6 @@ export default function Faq() {
                 if (response && response.length > 0) {
                     setFaqs(response);
                     setLoading(false);
-                    console.log(faqs);
-                    console.log(response);
                 }
             } catch (error) {
                 console.log(error);

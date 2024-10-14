@@ -20,13 +20,13 @@ export default function About() {
                         <OurApproach />
                     </div>
                 </div>
-                <div>
+                <section>
                     <BusinessCard />
 
                     <SkillsExpertise />
 
                     <Achievements />
-                </div>
+                </section>
             </div>
 
             <Offer />

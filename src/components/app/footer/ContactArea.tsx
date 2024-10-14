@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ClockIcon, MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 import type { IContactInformation } from "@/interfaces/contact";
 import api from "@/services/api";
@@ -8,7 +7,9 @@ import { ContactHelper } from "@/helpers/contact";
 
 const contactHelper = new ContactHelper(api);
 
-export default function ContactInformation() {
+
+export function ContactArea() {
+
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
     const [contactInformation, setContactInformation] = useState<IContactInformation | null>(null);
@@ -51,28 +52,25 @@ export default function ContactInformation() {
     ] : [];
 
     return (
-        <Card>
-            <CardHeader>
-                <CardTitle>İletişim Bilgileri</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-                {loading ? (
-                    <p>Yükleniyor...</p>
-                ) : (
-                    <>
-                        {error === null && contactInformation ? (
-                            contactInformationEntries.map(({ key, label, value }) => (
-                                <div className="flex items-center" key={key}>
-                                    {icons[key as keyof typeof icons]}
-                                    <p>{value || `${label} bilgisi bulunamadı.`}</p>
-                                </div>
-                            ))
-                        ) : (
-                            <p>{error}</p>
-                        )}
-                    </>
-                )}
-            </CardContent>
-        </Card>
-    );
+        <>
+            {loading ? (
+                <div className="text-gray-400">Yükleniyor...</div>
+            ) : (
+                <>
+                    {error === null && contactInformationEntries ? (
+                        contactInformationEntries.map(({ key, label, value }) => (
+                            <div key={key} className="flex items-center mb-2">
+                                {icons[key as keyof typeof icons] || null}
+                                <p className="text-gray-400">{value || `${label} bilgisi bulunamadı.`}</p>
+                            </div>
+
+                        ))
+                    ) : (
+                        <p className="text-gray-400">Hata</p>
+                    )
+                    }
+                </>
+            )}
+        </>
+    )
 }

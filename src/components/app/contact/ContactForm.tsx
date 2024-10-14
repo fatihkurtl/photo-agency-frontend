@@ -17,9 +17,7 @@ const contactHelper = new ContactHelper(api);
 export default function ContactForm() {
     const { toast } = useToast();
     const [error, setError] = useState<string | null>(null);
-    const [errors, setErrors] = useState<{ [key: string]: string }>({});
-
-    console.log(process.env.NEXT_PUBLIC_BASE_API_URL);
+    const [errors, setErrors] = useState<{ [key: string]: string }>({});    
 
     const [contactForm, setContactForm] = useState<IContact>({
         firstname: '',
@@ -62,7 +60,6 @@ export default function ContactForm() {
         }
         try {
             const response: IContactApiResponse = await contactHelper.sendContactForm(contactForm);
-            console.log(response);
             if (response.status === "success") {
                 toast({
                     title: "Mesajınız kayıt edildi.",
