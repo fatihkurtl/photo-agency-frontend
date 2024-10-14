@@ -25,11 +25,11 @@ export default function WhyChooseUs() {
                     setError(null);
                     setLoading(false);
                 } else {
-                    setError("Neden bizi seçmelisiniz");
+                    setError("Hata");
                 }
             } catch (error) {
                 console.log(error);
-                setError("Neden bizi seçmelisiniz");
+                setError("Hata");
             } finally {
                 setLoading(false);
             }

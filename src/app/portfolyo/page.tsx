@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from 'next/image';
-import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
@@ -15,13 +14,10 @@ const portfolioHelper = new PortfolioHelper(api);
 
 export default function Portfolio() {
 
-
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
     const [categories, setCategories] = useState<ICategory[]>([]);
-    const [activeCategory, setActiveCategory] = useState<string>('tümü');
     const [projects, setProjects] = useState<IProjects[]>([]);
-
 
     useEffect(() => {
         setLoading(true);
