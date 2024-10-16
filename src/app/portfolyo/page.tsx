@@ -98,7 +98,7 @@ export default function Portfolio() {
                                                             </CardContent>
                                                         </DialogTrigger>
                                                         <DialogContent className="max-w-3xl">
-                                                            <img src={project.image} alt={project.name} className="w-full h-auto" />
+                                                            <Image width={300} height={300} src={project.image} alt={project.name} className="w-full h-auto" />
                                                         </DialogContent>
                                                     </Dialog>
                                                 </Card>

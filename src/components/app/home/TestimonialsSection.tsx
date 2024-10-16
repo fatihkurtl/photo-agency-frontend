@@ -31,11 +31,11 @@ export default function TestimonialsSection() {
         getClientTestimonials();
     }, []);
 
-    const testimonials = [
-        { name: "Ahmet Yılmaz", company: "XYZ Teknoloji A.Ş.", quote: "Şirketimizin kurumsal fotoğraf ihtiyaçları için tercih ettiğimiz John Doe Photography, profesyonel yaklaşımı ve kaliteli işleriyle beklentilerimizi fazlasıyla karşıladı." },
-        { name: "Ayşe Kaya", company: "ABC Mimarlık", quote: "Projelerimizin fotoğraflanması konusunda John Doe Photography'nin yaratıcı bakış açısı ve teknik uzmanlığı, portföyümüze büyük değer kattı." },
-        { name: "Mehmet Demir", company: "123 E-ticaret", quote: "Ürünlerimizin online satışlarında John Doe Photography'nin çektiği fotoğraflar sayesinde ciddi bir artış yaşadık. Profesyonellik ve kalite konusunda rakipsizler." },
-    ]
+    // const testimonials = [
+    //     { name: "Ahmet Yılmaz", company: "XYZ Teknoloji A.Ş.", quote: "Şirketimizin kurumsal fotoğraf ihtiyaçları için tercih ettiğimiz John Doe Photography, profesyonel yaklaşımı ve kaliteli işleriyle beklentilerimizi fazlasıyla karşıladı." },
+    //     { name: "Ayşe Kaya", company: "ABC Mimarlık", quote: "Projelerimizin fotoğraflanması konusunda John Doe Photography'nin yaratıcı bakış açısı ve teknik uzmanlığı, portföyümüze büyük değer kattı." },
+    //     { name: "Mehmet Demir", company: "123 E-ticaret", quote: "Ürünlerimizin online satışlarında John Doe Photography'nin çektiği fotoğraflar sayesinde ciddi bir artış yaşadık. Profesyonellik ve kalite konusunda rakipsizler." },
+    // ]
 
     return (
         <section className="py-20">

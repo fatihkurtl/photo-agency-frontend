@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
-import { AwardIcon, BuildingIcon, CameraIcon, UserIcon } from "lucide-react";
+// import { AwardIcon, BuildingIcon, CameraIcon, UserIcon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import type { IServiceSection } from "@/interfaces/home";
+// import type { IServiceSection } from "@/interfaces/home";
 import api from "@/services/api";
 import { HomeHelper } from "@/helpers/home";
 import { ServicesHelper } from "@/helpers/services";
