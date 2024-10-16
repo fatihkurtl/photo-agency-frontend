@@ -69,8 +69,8 @@ export class ApiServices {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public async delete<T>(endpoit: string, body: any, headers: Record<string, string>): Promise<T> {
-      return this.request<T>(endpoit, { method: "DELETE", body, headers });
+  public async delete<T>(endpoint: string, body: any, headers: Record<string, string>): Promise<T> {
+      return this.request<T>(endpoint, { method: "DELETE", body, headers });
   }
 }
 

@@ -6,7 +6,7 @@ import TestimonialsSection from "@/components/app/home/TestimonialsSection";
 import CTASection from "@/components/app/home/CTASection";
 
 export default function Home() {
-  console.log(process.env.NEXT_PUBLIC_BASE_API_URL);
+  // console.log(process.env.NEXT_PUBLIC_BASE_API_URL);
   return (
     <main>
       <HeroSection />
