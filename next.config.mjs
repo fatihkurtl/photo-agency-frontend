@@ -3,6 +3,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  output: 'standalone',
   images: {
     domains: ["sea-lion-app-75389.ondigitalocean.app"],
     remotePatterns: [
