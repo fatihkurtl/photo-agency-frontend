@@ -3,7 +3,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  output: 'standalone',
+  output: "standalone",
   images: {
     domains: ["sea-lion-app-75389.ondigitalocean.app"],
     remotePatterns: [
@@ -30,8 +30,38 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/:path*",
+        source: "/api/:path*",
         destination: "https://sea-lion-app-75389.ondigitalocean.app/:path*",
+      },
+      {
+        source: "/home/:path*",
+        destination:
+          "https://sea-lion-app-75389.ondigitalocean.app/home/:path*",
+      },
+      {
+        source: "/references/:path*",
+        destination:
+          "https://sea-lion-app-75389.ondigitalocean.app/references/:path*",
+      },
+      {
+        source: "/contact/:path*",
+        destination:
+          "https://sea-lion-app-75389.ondigitalocean.app/contact/:path*",
+      },
+      {
+        source: "/services/:path*",
+        destination:
+          "https://sea-lion-app-75389.ondigitalocean.app/services/:path*",
+      },
+      {
+        source: "/about/:path*",
+        destination:
+          "https://sea-lion-app-75389.ondigitalocean.app/about/:path*",
+      },
+      {
+        source: "/portfolio/:path*",
+        destination:
+          "https://sea-lion-app-75389.ondigitalocean.app/portfolio/:path*",
       },
     ];
   },
