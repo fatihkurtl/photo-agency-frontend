@@ -14,8 +14,8 @@ const generalHelper = new GeneralHelper(api);
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
-    const [loading, setLoading] = useState<boolean>(false);
-    const [error, setError] = useState<string | null>(null);
+    // const [loading, setLoading] = useState<boolean>(false);
+    // const [error, setError] = useState<string | null>(null);
     const [general, setGeneral] = useState<IGeneral[]>([]);
 
     const pathname = usePathname();
@@ -31,17 +31,17 @@ export default function Header() {
 
     useEffect(() => {
         const getGeneral = async () => {
-            setLoading(true);
+            // setLoading(true);
             try {
                 const response: IGeneral[] = await generalHelper.getGeneralData();
                 setGeneral(response);
-                setLoading(false);
-                setError(null);
+                // setLoading(false);
+                // setError(null);
             } catch (error) {
                 console.log(error);
-                setError("Hata");
+                // setError("Hata");
             } finally {
-                setLoading(false);
+                // setLoading(false);
             }
         };
 
