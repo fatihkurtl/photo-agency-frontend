@@ -4,7 +4,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['3cs-energetic-fermi.circumeo-apps.net'],
+    domains: ['sea-lion-app-75389.ondigitalocean.app'],
     remotePatterns: [
       {
         protocol: "https",
@@ -20,7 +20,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "3cs-energetic-fermi.circumeo-apps.net",
+        hostname: "sea-lion-app-75389.ondigitalocean.app",
         port: "",
         pathname: '/**',
       },
