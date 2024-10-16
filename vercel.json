@@ -1,9 +1,16 @@
 {
-    "rewrites": [
-      {
-        "source": "/:path*",
-        "destination": "https://sea-lion-app-75389.ondigitalocean.app/:path*"
-      }
+    "crons": [
+        {
+            "path": "/api/every-minute",
+            "schedule": "* * * * *"
+        },
+        {
+            "path": "/api/every-hour",
+            "schedule": "0 * * * *"
+        },
+        {
+            "path": "/api/every-day",
+            "schedule": "0 0 * * *"
+        }
     ]
-  }
-  
+}
