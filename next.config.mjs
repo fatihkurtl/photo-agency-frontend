@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    domains: ['3cs-energetic-fermi.circumeo-apps.net'],
     remotePatterns: [
       {
         protocol: "https",
@@ -13,6 +14,12 @@ const nextConfig = {
         hostname: "127.0.0.1",
         port: "8080",
         pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "3cs-energetic-fermi.circumeo-apps.net",
+        port: "",
+        pathname: '/**',
       },
     ],
   },

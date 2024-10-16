@@ -1,12 +1,13 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { CameraIcon, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { IGeneral } from "@/interfaces/general";
 import api from "@/services/api";
 import { GeneralHelper } from "@/helpers/general";
-import Link from 'next/link';
 
 const generalHelper = new GeneralHelper(api);
 
@@ -65,7 +66,7 @@ export default function Header() {
                         {general[0]?.logo === '' ? (
                             <CameraIcon className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                         ) : (
-                            <img className="h-6 w-6 sm:h-8 sm:w-8" src={general[0]?.logo} alt="Logo" />
+                            <Image className="h-6 w-6 sm:h-8 sm:w-8" width={40} height={40} src={general[0]?.logo} alt="Logo" />
                         )}
                         <Link href="/">
                             <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 truncate">
