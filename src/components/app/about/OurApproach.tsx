@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-// import { AwardIcon, BookOpenIcon, CameraIcon, UsersIcon } from "lucide-react";
+import { AwardIcon, BookOpenIcon, CameraIcon, UsersIcon } from "lucide-react";
 import api from "@/services/api";
 import { AboutHelper } from "@/helpers/about";
 import type { IOurApproach } from "@/interfaces/about";
