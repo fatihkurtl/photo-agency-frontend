@@ -9,13 +9,13 @@ export class HomeHelper {
   }
 
   async getHeroSection(): Promise<IHeroSection[]> {
-    return this.api.get("/home/hero_section/", {
+    return this.api.get("/home/hero_section", {
       "Content-Type": "application/json",
     });
   }
 
   async getCTASection(): Promise<ICTASection[]> {
-    return this.api.get("/home/cta_section/", {
+    return this.api.get("/home/cta_section", {
       "Content-Type": "application/json",
     });
   }
