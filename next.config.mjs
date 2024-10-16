@@ -22,7 +22,7 @@ const nextConfig = {
         protocol: "https",
         hostname: "sea-lion-app-75389.ondigitalocean.app",
         port: "",
-        pathname: '/media/**',
+        pathname: '/**',
       },
     ],
   },
