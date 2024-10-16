@@ -4,7 +4,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['sea-lion-app-75389.ondigitalocean.app'],
+    domains: ["sea-lion-app-75389.ondigitalocean.app"],
     remotePatterns: [
       {
         protocol: "https",
@@ -22,9 +22,17 @@ const nextConfig = {
         protocol: "https",
         hostname: "sea-lion-app-75389.ondigitalocean.app",
         port: "",
-        pathname: '/**',
+        pathname: "/**",
       },
     ],
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/:path*",
+        destination: "https://sea-lion-app-75389.ondigitalocean.app/:path*",
+      },
+    ];
   },
 };
 
