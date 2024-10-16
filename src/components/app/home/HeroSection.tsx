@@ -52,7 +52,9 @@ export default function HeroSection() {
                             </div>
                         </div>
                         <div className="md:w-1/2 flex justify-center">
-                            <img
+                            <Image
+                                width={500}
+                                height={500}
                                 src={item.image || PlaceHolder}
                                 alt="Professional Photography Services"
                                 className="rounded-lg shadow-lg object-cover"
