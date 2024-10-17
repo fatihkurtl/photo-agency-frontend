@@ -74,5 +74,5 @@ export class ApiServices {
   }
 }
 
-const api = new ApiServices("https://vocational-ostrich-fatihkurt-610bc720.koyeb.app");
+const api = new ApiServices("https://monkfish-app-2-l9a2v.ondigitalocean.app/api");
 export default api;

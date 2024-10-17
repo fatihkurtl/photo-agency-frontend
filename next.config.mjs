@@ -5,7 +5,7 @@ const nextConfig = {
   },
   output: "standalone",
   images: {
-    domains: ["sea-lion-app-75389.ondigitalocean.app"],
+    domains: ["monkfish-app-2-l9a2v.ondigitalocean.app"],
     remotePatterns: [
       {
         protocol: "https",
@@ -21,7 +21,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "sea-lion-app-75389.ondigitalocean.app",
+        hostname: "monkfish-app-2-l9a2v.ondigitalocean.app",
         port: "",
         pathname: "/**",
       },
@@ -31,37 +31,37 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: "https://sea-lion-app-75389.ondigitalocean.app/:path*",
+        destination: "https://monkfish-app-2-l9a2v.ondigitalocean.app/:path*",
       },
       {
         source: "/home/:path*",
         destination:
-          "https://sea-lion-app-75389.ondigitalocean.app/home/:path*",
+          "https://monkfish-app-2-l9a2v.ondigitalocean.app/home/:path*",
       },
       {
         source: "/references/:path*",
         destination:
-          "https://sea-lion-app-75389.ondigitalocean.app/references/:path*",
+          "https://monkfish-app-2-l9a2v.ondigitalocean.app/references/:path*",
       },
       {
         source: "/contact/:path*",
         destination:
-          "https://sea-lion-app-75389.ondigitalocean.app/contact/:path*",
+          "https://monkfish-app-2-l9a2v.ondigitalocean.app/contact/:path*",
       },
       {
         source: "/services/:path*",
         destination:
-          "https://sea-lion-app-75389.ondigitalocean.app/services/:path*",
+          "https://monkfish-app-2-l9a2v.ondigitalocean.app/services/:path*",
       },
       {
         source: "/about/:path*",
         destination:
-          "https://sea-lion-app-75389.ondigitalocean.app/about/:path*",
+          "https://monkfish-app-2-l9a2v.ondigitalocean.app/about/:path*",
       },
       {
         source: "/portfolio/:path*",
         destination:
-          "https://sea-lion-app-75389.ondigitalocean.app/portfolio/:path*",
+          "https://monkfish-app-2-l9a2v.ondigitalocean.app/portfolio/:path*",
       },
     ];
   },
