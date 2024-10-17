@@ -4,7 +4,6 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
-// import SeoComp from "@/components/app/general/SeoComp";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 
