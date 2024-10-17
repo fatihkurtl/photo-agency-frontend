@@ -74,5 +74,5 @@ export class ApiServices {
   }
 }
 
-const api = new ApiServices("https://monkfish-app-2-l9a2v.ondigitalocean.app/api");
+const api = new ApiServices(process.env.NEXT_PUBLIC_BASE_API_URL as string);
 export default api;
