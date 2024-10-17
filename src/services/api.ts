@@ -47,7 +47,6 @@ export class ApiServices {
     };
 
     try {
-      console.log(`Sending ${options.method} request to:`, url.toString());
       const response = await fetch(url.toString(), config);
       const responseData = await response.text();
 
