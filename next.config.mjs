@@ -5,7 +5,7 @@ const nextConfig = {
   },
   output: "standalone",
   images: {
-    domains: ["monkfish-app-2-l9a2v.ondigitalocean.app"],
+    domains: ["musical-kellyann-fatihkurt-dee41f98.koyeb.app"],
     remotePatterns: [
       {
         protocol: "https",
@@ -25,43 +25,49 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "musical-kellyann-fatihkurt-dee41f98.koyeb.app",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   async rewrites() {
     return [
       {
         source: "/api/:path*",
-        destination: "https://monkfish-app-2-l9a2v.ondigitalocean.app/:path*",
+        destination: "https://musical-kellyann-fatihkurt-dee41f98.koyeb.app/:path*",
       },
       {
         source: "/home/:path*",
         destination:
-          "https://monkfish-app-2-l9a2v.ondigitalocean.app/home/:path*",
+          "https://musical-kellyann-fatihkurt-dee41f98.koyeb.app/home/:path*",
       },
       {
         source: "/references/:path*",
         destination:
-          "https://monkfish-app-2-l9a2v.ondigitalocean.app/references/:path*",
+          "https://musical-kellyann-fatihkurt-dee41f98.koyeb.app/references/:path*",
       },
       {
         source: "/contact/:path*",
         destination:
-          "https://monkfish-app-2-l9a2v.ondigitalocean.app/contact/:path*",
+          "https://musical-kellyann-fatihkurt-dee41f98.koyeb.app/contact/:path*",
       },
       {
         source: "/services/:path*",
         destination:
-          "https://monkfish-app-2-l9a2v.ondigitalocean.app/services/:path*",
+          "https://musical-kellyann-fatihkurt-dee41f98.koyeb.app/services/:path*",
       },
       {
         source: "/about/:path*",
         destination:
-          "https://monkfish-app-2-l9a2v.ondigitalocean.app/about/:path*",
+          "https://musical-kellyann-fatihkurt-dee41f98.koyeb.app/about/:path*",
       },
       {
         source: "/portfolio/:path*",
         destination:
-          "https://monkfish-app-2-l9a2v.ondigitalocean.app/portfolio/:path*",
+          "https://musical-kellyann-fatihkurt-dee41f98.koyeb.app/portfolio/:path*",
       },
     ];
   },
