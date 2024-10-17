@@ -74,5 +74,5 @@ export class ApiServices {
   }
 }
 
-const api = new ApiServices(process.env.BASE_API_URL as string);
+const api = new ApiServices(process.env.NEXT_PUBLIC_BASE_API_URL as string);
 export default api;
