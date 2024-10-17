@@ -51,8 +51,6 @@ export class ApiServices {
       const response = await fetch(url.toString(), config);
       const responseData = await response.text();
 
-      console.log(`Response received from ${url.toString()}:`, responseData);
-
       if (!response.ok) {
         throw new Error(
           `HTTP error! status: ${response.status}, body: ${responseData}`
