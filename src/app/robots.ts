@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/admin/',
     },
-    sitemap: 'https://zenmedya.com/sitemap.xml',
+    sitemap: 'https://famedya.com/sitemap.xml',
   }
 }

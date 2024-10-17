@@ -3,37 +3,37 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://zenmedya.com',
+      url: 'https://famedya.com',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,
     },
     {
-      url: 'https://zenmedya.com/hizmetler',
+      url: 'https://famedya.com/hizmetler',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: 'https://zenmedya.com/portfolyo',
+      url: 'https://famedya.com/portfolyo',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: 'https://zenmedya.com/referanslar',
+      url: 'https://famedya.com/referanslar',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: 'https://zenmedya.com/hakkimizda',
+      url: 'https://famedya.com/hakkimizda',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://zenmedya.com/iletisim',
+      url: 'https://famedya.com/iletisim',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
