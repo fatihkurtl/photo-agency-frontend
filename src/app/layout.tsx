@@ -21,21 +21,21 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Zen Medya - Web Sitesi",
-  description: "Zen Medya fotoğraf ve video çekim hizmetleri, etkinlik, reklam ve kişisel fotoğrafçılık hizmetleri.",
+  title: "FA Medya - Web Sitesi",
+  description: "FA Medya fotoğraf ve video çekim hizmetleri, etkinlik, reklam ve kişisel fotoğrafçılık hizmetleri.",
   keywords: ["medya", "ajans", "fotoğraf", "video", "kurgu", "fotoğrafçılık", "reklam", "sosyal medya", "etkinlik", "düğün", "cemiyet"],
   authors: [{ name: "Fatih Kurt", url: "https://fatihkurt.web.tr/" }],
   openGraph: {
-    title: "Zen Medya - Web Sitesi",
-    description: "Zen Medya fotoğraf ve video çekim hizmetleri, etkinlik, reklam ve kişisel fotoğrafçılık hizmetleri.",
-    url: "https://zenmedya.com",
-    siteName: "Zen Medya",
+    title: "FA Medya - Web Sitesi",
+    description: "FA Medya fotoğraf ve video çekim hizmetleri, etkinlik, reklam ve kişisel fotoğrafçılık hizmetleri.",
+    url: "https://FAmedya.com",
+    siteName: "FA Medya",
     images: [
       {
         url: "https://myawesomeapp.com/og-image.jpg",
         width: 800,
         height: 600,
-        alt: "Zen Medya OG Image",
+        alt: "FA Medya OG Image",
       },
     ],
     locale: "tr_TR",
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zen Medya - Web Sitesi",
-    description: "Zen Medya fotoğraf ve video çekim hizmetleri, etkinlik, reklam ve kişisel fotoğrafçılık hizmetleri.",
+    title: "FA Medya - Web Sitesi",
+    description: "FA Medya fotoğraf ve video çekim hizmetleri, etkinlik, reklam ve kişisel fotoğrafçılık hizmetleri.",
     images: ["https://myawesomeapp.com/twitter-image.jpg"],
   },
   icons: {

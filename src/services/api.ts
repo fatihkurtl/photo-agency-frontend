@@ -1,45 +1,57 @@
-type HtppMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
+type HttpMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 
 interface RequestOptions {
-  method: HtppMethod;
-  headers: Record<string, string>;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  method: HttpMethod;
+  headers?: Record<string, string>;
   body?: any;
+  cache?: RequestCache;
 }
 
 export class ApiServices {
   private baseUrl: string;
 
   constructor(baseUrl: string) {
+    if (!baseUrl) {
+      console.error('Base API URL is not defined');
+      throw new Error('Base API URL is required');
+    }
     this.baseUrl = baseUrl;
   }
 
   private async request<T>(
     endpoint: string,
-    options?: RequestOptions
+    options: RequestOptions
   ): Promise<T> {
-    const url = `${this.baseUrl}${endpoint}`;
+    const url = new URL(`${this.baseUrl}${endpoint}`);
+    
+    url.searchParams.append('_t', Date.now().toString());
+
     const headers: Record<string, string> = {
-      ...options?.headers,
+      'Content-Type': 'application/json',
+      ...options.headers,
     };
-    let body: string | FormData | undefined = options?.body;
+
+    let body: string | FormData | undefined = options.body;
 
     if (body instanceof FormData) {
       delete headers["Content-Type"];
     } else if (typeof body === "object") {
-      headers["Content-Type"] = "application/json";
       body = JSON.stringify(body);
     }
 
     const config: RequestInit = {
-      method: options?.method,
+      method: options.method,
       headers,
       body,
+      cache: options.cache || 'no-store',
     };
 
     try {
-      const response = await fetch(url, config);
+      console.log(`Sending ${options.method} request to:`, url.toString());
+      const response = await fetch(url.toString(), config);
       const responseData = await response.text();
+
+      console.log(`Response received from ${url.toString()}:`, responseData);
 
       if (!response.ok) {
         throw new Error(
@@ -54,23 +66,24 @@ export class ApiServices {
     }
   }
 
-  public async get<T>(endpoint: string, headers: Record<string, string>): Promise<T> {
-    return this.request<T>(endpoint, { method: "GET", headers });
+  public async get<T>(endpoint: string, headers?: Record<string, string>, cache?: RequestCache): Promise<T> {
+    return this.request<T>(endpoint, { method: "GET", headers, cache });
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public async post<T>(endpoint: string, body: any, headers: Record<string, string>): Promise<T> {
-      return this.request<T>(endpoint, { method: "POST", body, headers });
+  public async post<T>(endpoint: string, body: any, headers?: Record<string, string>): Promise<T> {
+    return this.request<T>(endpoint, { method: "POST", body, headers });
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public async put<T>(endpoint: string, body: any, headers: Record<string, string>): Promise<T> {
-      return this.request<T>(endpoint, { method: "PUT", body, headers });
+  public async put<T>(endpoint: string, body: any, headers?: Record<string, string>): Promise<T> {
+    return this.request<T>(endpoint, { method: "PUT", body, headers });
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public async delete<T>(endpoint: string, body: any, headers: Record<string, string>): Promise<T> {
-      return this.request<T>(endpoint, { method: "DELETE", body, headers });
+  public async patch<T>(endpoint: string, body: any, headers?: Record<string, string>): Promise<T> {
+    return this.request<T>(endpoint, { method: "PATCH", body, headers });
+  }
+
+  public async delete<T>(endpoint: string, body?: any, headers?: Record<string, string>): Promise<T> {
+    return this.request<T>(endpoint, { method: "DELETE", body, headers });
   }
 }
 
