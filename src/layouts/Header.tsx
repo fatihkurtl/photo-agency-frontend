@@ -70,7 +70,7 @@ export default function Header() {
                         )}
                         <Link href="/">
                             <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 truncate">
-                                {general[0]?.company_name === '' ? 'Photographer' : general[0]?.company_name}
+                                {general[0]?.company_name === '' ? 'FA Medya' : general[0]?.company_name}
                             </h1>
                         </Link>
                     </div>
