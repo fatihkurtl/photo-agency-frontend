@@ -85,7 +85,7 @@ export default function BusinessCard() {
                                     className="w-full h-auto rounded-lg mb-4"
                                 />
                                 <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
-                                <p className="text-gray-600 mb-4">Professional Photographer</p>
+                                <p className="text-gray-600 mb-4">{card.subtitle}</p>
                                 <div className="flex space-x-4 mb-4">
                                     <>
                                         {error === null ? (
