@@ -27,11 +27,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FA Medya - Web Sitesi",
     description: "FA Medya fotoğraf ve video çekim hizmetleri, etkinlik, reklam ve kişisel fotoğrafçılık hizmetleri.",
-    url: "https://FAmedya.com",
+    url: "https://famedya.com",
     siteName: "FA Medya",
     images: [
       {
-        url: "https://myawesomeapp.com/og-image.jpg",
+        url: "https://musical-kellyann-fatihkurt-dee41f98.koyeb.app/media/home/Horizontal-Placeholder-Image.jpg",
         width: 800,
         height: 600,
         alt: "FA Medya OG Image",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FA Medya - Web Sitesi",
     description: "FA Medya fotoğraf ve video çekim hizmetleri, etkinlik, reklam ve kişisel fotoğrafçılık hizmetleri.",
-    images: ["https://myawesomeapp.com/twitter-image.jpg"],
+    images: ["https://musical-kellyann-fatihkurt-dee41f98.koyeb.app/media/home/Horizontal-Placeholder-Image.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
