@@ -8,17 +8,14 @@ import type { ICategory, IService } from "@/interfaces/services";
 import api from "@/services/api";
 import { ServicesHelper } from "@/helpers/services";
 
-
 const servicesHelper = new ServicesHelper(api);
 
 export default function OurServices() {
-
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
     const [categories, setCategories] = useState<ICategory[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string>("");
     const [services, setServices] = useState<IService[]>([]);
-
 
     useEffect(() => {
         setLoading(true);
@@ -69,13 +66,19 @@ export default function OurServices() {
 
     return (
         <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full mb-12">
-            <TabsList className="flex justify-center space-x-2 mb-8">
-                {categories.map((category) => (
-                    <TabsTrigger key={category.slug} value={category.slug} className="px-4 py-2">
-                        {category.name}
-                    </TabsTrigger>
-                ))}
-            </TabsList>
+            <div className="w-full max-w-full overflow-x-auto pb-4">
+                <TabsList className="w-full inline-flex flex-nowrap justify-start md:justify-center space-x-2">
+                    {categories.map((category) => (
+                        <TabsTrigger 
+                            key={category.slug} 
+                            value={category.slug} 
+                            className="min-w-fit whitespace-nowrap px-4 py-2"
+                        >
+                            {category.name}
+                        </TabsTrigger>
+                    ))}
+                </TabsList>
+            </div>
             {loading ? (
                 <div>Yukleniyor...</div>
             ) : (
@@ -83,7 +86,6 @@ export default function OurServices() {
                     services.map((service) => (
                         <TabsContent key={service.category_slug} value={service.category_slug}>
                             <div className="text-center mb-8">
-                                {/* {service.icon} */}
                                 <h3 className="text-2xl font-semibold mt-4 mb-2">{service.title}</h3>
                                 <p className="text-gray-600">{service.description}</p>
                             </div>
