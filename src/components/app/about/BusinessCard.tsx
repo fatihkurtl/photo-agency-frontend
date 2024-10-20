@@ -79,7 +79,7 @@ export default function BusinessCard() {
                             <CardContent key={index} className="p-6">
                                 <Image
                                     src={card.logo ? card.logo : PlaceHolder}
-                                    alt="John Doe"
+                                    alt={card.title}
                                     width={10}
                                     height={10}
                                     className="w-full h-auto rounded-lg mb-4"
