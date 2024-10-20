@@ -4,7 +4,8 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
-import { GoogleAnalytics } from "@next/third-parties/google";
+// import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from '@vercel/analytics/react';
 
 
 const geistSans = localFont({
@@ -66,7 +67,7 @@ export default function RootLayout({
         <Footer />
         <Toaster />
       </body>
-      <GoogleAnalytics gaId="G-61LK3D6770" />
+      <Analytics />
     </html>
   );
 }
