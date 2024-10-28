@@ -3,7 +3,7 @@ import React from 'react'
 import ClientPortfolio from '@/components/app/references/ClientPortfolio';
 import ClientTestimonials from '@/components/app/references/ClientTestimonials';
 import FeaturedProjects from '@/components/app/references/FeaturedProjects';
-import IndustryRecognition from '@/components/app/references/IndustryRecognition';
+// import IndustryRecognition from '@/components/app/references/IndustryRecognition';
 import Offer from '@/components/app/about/Offer';
 
 export default function References() {
@@ -23,10 +23,10 @@ export default function References() {
                 <FeaturedProjects />
             </section>
 
-            <section className="mb-16">
+            {/* <section className="mb-16">
                 <h3 className="text-2xl font-semibold mb-6">Sektörel Tanınırlık</h3>
                 <IndustryRecognition />
-            </section>
+            </section> */}
 
             <section className="bg-gray-100 rounded-lg p-8 text-center">
                 <Offer />

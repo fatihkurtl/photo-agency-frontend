@@ -38,9 +38,9 @@ export class AboutHelper {
     });
   }
 
-  async getAchievements(): Promise<IAchievements[]> {
-    return this.api.get("/about/achievements", {
-      "Content-Type": "application/json",
-    });
-  }
+  // async getAchievements(): Promise<IAchievements[]> {
+  //   return this.api.get("/about/achievements", {
+  //     "Content-Type": "application/json",
+  //   });
+  // }
 }

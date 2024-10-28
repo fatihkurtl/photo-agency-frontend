@@ -4,7 +4,7 @@ import Content from '@/components/app/about/Content'
 import OurApproach from '@/components/app/about/OurApproach'
 import BusinessCard from '@/components/app/about/BusinessCard'
 import SkillsExpertise from '@/components/app/about/SkillsExpertise'
-import Achievements from '@/components/app/about/Achievements'
+// import Achievements from '@/components/app/about/Achievements'
 import Offer from '@/components/app/about/Offer'
 
 export default function About() {
@@ -25,7 +25,7 @@ export default function About() {
 
                     <SkillsExpertise />
 
-                    <Achievements />
+                    {/* <Achievements /> */}
                 </section>
             </div>
 

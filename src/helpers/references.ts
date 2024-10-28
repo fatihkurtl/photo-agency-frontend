@@ -31,9 +31,9 @@ export class ReferencesHelper {
     });
   }
 
-  async getIndustryRecognition(): Promise<ISectoralRecognition[]> {
-    return this.api.get("/references/sectoral_recognition", {
-      "Content-Type": "application/json",
-    });
-  }
+  // async getIndustryRecognition(): Promise<ISectoralRecognition[]> {
+  //   return this.api.get("/references/sectoral_recognition", {
+  //     "Content-Type": "application/json",
+  //   });
+  // }
 }
